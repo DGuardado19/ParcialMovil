@@ -9,6 +9,6 @@ class equipoRepository(
 
 
     fun getAllEquipo(): LiveData<List<Equipo>> = Equipo.getAll()
-    fun insertEquipo(): LiveData<List<Equipo>> = Equipo.Insert()
+    suspend fun insertEquipo(equipo: Equipo) = Equipo.Insert(equipo)
 
 }

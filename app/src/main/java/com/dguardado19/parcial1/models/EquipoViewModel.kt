@@ -21,6 +21,6 @@ class EquipoViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun insert (equipo: Equipo)= viewModelScope.launch(Dispatchers.IO) {
-        repository.insertEquipo()
+        repository.insertEquipo(equipo)
     }
 }

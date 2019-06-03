@@ -13,5 +13,5 @@ interface equipoDao  {
     fun getAll():LiveData<List<Equipo>>
 
     @Insert
-    fun Insert():LiveData<List<Equipo>>
+    suspend fun Insert(equipo:Equipo)
 }
