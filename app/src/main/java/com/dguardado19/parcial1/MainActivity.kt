@@ -19,53 +19,40 @@ import com.dguardado19.parcial1.database.entities.Equipo
 import com.dguardado19.parcial1.models.EquipoViewModel
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main2.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var  view:EquipoViewModel
-    lateinit var recycler:Adapeer
+    lateinit var view: EquipoViewModel
+    lateinit var recycler: Adapeer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-           startActivity(Intent(this,Main2Activity::class.java))
+            startActivity(Intent(this, Main2Activity::class.java))
         }
-        recycler= Adapeer(emptyList<Equipo>(), { equipo:Equipo -> (listener(equipo))})
-        recylerxml.adapter= recycler
-        recylerxml.layoutManager=LinearLayoutManager(this)
+        recycler = Adapeer(emptyList<Equipo>(), { equipo: Equipo -> (listener(equipo)) })
+        recylerxml.adapter = recycler
+        recylerxml.layoutManager = LinearLayoutManager(this)
 
-        view=ViewModelProviders.of(this).get(EquipoViewModel::class.java)
-        view.AllEquipo.observe(this, Observer { equipo->
+        view = ViewModelProviders.of(this).get(EquipoViewModel::class.java)
+        view.AllEquipo.observe(this, Observer { equipo ->
             equipo?.let { recycler.setEquipo(it) }
-         })
+        })
 
     }
 
 
-    fun listener(equipo : Equipo){
+    fun listener(equipo: Equipo) {
         var content = Bundle()
 
         content.putParcelable("hay", equipo)
 
-        startActivity(Intent(this,Main3Activity::class.java).putExtra("act3", content))
+        startActivity(Intent(this, Main3Activity::class.java).putExtra("act3", content))
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 }
+
+

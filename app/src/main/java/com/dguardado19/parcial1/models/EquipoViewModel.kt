@@ -13,6 +13,8 @@ import kotlinx.coroutines.launch
 class EquipoViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: equipoRepository
     val AllEquipo: LiveData<List<Equipo>>
+    var punto1: Int=0
+    var punto2: Int=0
 
     init {
         val EquipoDao = EquipoDB.getDataBase(application).EquipoDao()
