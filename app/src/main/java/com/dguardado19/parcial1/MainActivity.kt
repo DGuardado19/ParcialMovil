@@ -40,9 +40,16 @@ class MainActivity : AppCompatActivity() {
         view.AllEquipo.observe(this, Observer { equipo->
             equipo?.let { recycler.setEquipo(it) }
          })
+
     }
 
+
     fun listener(equipo : Equipo){
+        var content = Bundle()
+
+        content.putParcelable("hay", equipo)
+
+        startActivity(Intent(this,Main3Activity::class.java).putExtra("act3", content))
 
     }
 
