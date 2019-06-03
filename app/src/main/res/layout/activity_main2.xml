@@ -41,7 +41,7 @@ android:orientation="vertical">
             android:id="@+id/ingresarnombreteamA"/>
             <TextView
                     android:id="@+id/equipo1contador"
-                    android:text="-"
+                    android:text="0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -89,7 +89,7 @@ android:orientation="vertical">
                       android:id="@+id/ingresarnombreteamB"/>
             <TextView
                     android:id="@+id/contadorequipo2"
-                    android:text="-"
+                    android:text="0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

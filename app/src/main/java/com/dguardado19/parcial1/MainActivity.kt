@@ -1,5 +1,6 @@
 package com.dguardado19.parcial1
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,15 +30,16 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-           
+           startActivity(Intent(this,Main2Activity::class.java))
         }
         recycler= Adapeer(emptyList<Equipo>(), { equipo:Equipo -> (listener(equipo))})
         recylerxml.adapter= recycler
         recylerxml.layoutManager=LinearLayoutManager(this)
+
         view=ViewModelProviders.of(this).get(EquipoViewModel::class.java)
-        view.AllEquipo.observe(this, Observer { equipo->{
+        view.AllEquipo.observe(this, Observer { equipo->
             equipo?.let { recycler.setEquipo(it) }
-        } })
+         })
     }
 
     fun listener(equipo : Equipo){

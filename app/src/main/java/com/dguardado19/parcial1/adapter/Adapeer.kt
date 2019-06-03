@@ -26,8 +26,8 @@ class Adapeer(var equipo: List<Equipo>, var clickListener: (Equipo) -> Unit) :
 
     class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         fun onBind(equipo: Equipo, clickListener: (Equipo) -> Unit) {
-            itemView.nombresjugadores.text= equipo.equipo1 + "vs"+ equipo.equipo2
-            itemView.mostrarScore.text = "Score equipo 2:"+ equipo.score1.toString() + "Score equipo 2:"+ equipo.score2.toString()
+            itemView.nombresjugadores.text= equipo.equipo1 + "     vs     "+ equipo.equipo2
+            itemView.mostrarScore.text = "     Score "+ equipo.equipo1 + ": " + equipo.score1.toString() + "            Score " + equipo.equipo2 +  ": "+ equipo.score2.toString()
             itemView.linearboton.setOnClickListener {
                 clickListener(equipo)
             }
