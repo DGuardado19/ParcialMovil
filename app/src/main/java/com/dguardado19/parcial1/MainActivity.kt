@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+           
         }
         recycler= Adapeer(emptyList<Equipo>(), { equipo:Equipo -> (listener(equipo))})
         recylerxml.adapter= recycler

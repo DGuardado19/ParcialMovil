@@ -1,10 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Main2Activity">
+        android:layout_height="wrap_content"
+        tools:context=".Main2Activity"
+android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+   <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+   android:text="Puntajes del juego"
+   android:layout_gravity="center"
+             android:padding="30dp"
+   android:textSize="25dp"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+    android:orientation="horizontal">
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:text="Team A"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:hint="Nombre team A:"
+            android:id="@+id/ingresarnombreteamA"/>
+            <TextView
+                    android:id="@+id/equipo1contador"
+                    android:text="-"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+            />
+            <Button
+                    android:id="@+id/btnequipo1"
+                    android:text="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sumarBoton"
+            />
+            <Button
+                    android:id="@+id/btn2Equipo1"
+                    android:text="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sumarBoton"
+            />
+            <Button
+                    android:id="@+id/btn3Equipo1"
+                    android:text="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sumarBoton"
+            />
+        </LinearLayout>
+        <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#D8D4D4"/>
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:text="Team B"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"/>
+            <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:hint="Nombre team B:"
+                      android:id="@+id/ingresarnombreteamB"/>
+            <TextView
+                    android:id="@+id/contadorequipo2"
+                    android:text="-"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+            />
+            <Button
+                    android:id="@+id/btnEquipo2"
+                    android:text="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sumarBoton"/>
+            <Button
+                    android:id="@+id/btn2Equipo2"
+                    android:text="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sumarBoton"
+            />
+            <Button
+                    android:id="@+id/btn3Equipo2"
+                    android:text="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="sumarBoton"
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+      android:layout_marginTop="25dp"
+        android:hint="Fecha de juego?"
+        android:id="@+id/fechadeljuego"/>
+
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_marginTop="25dp"
+                  android:hint="Hora del juego?"
+        android:id="@+id/horadeljuego"/>
+
+        <Button android:layout_width="wrap_content" android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:text="Guardar"
+        android:id="@+id/btnguardar"
+        android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>
